@@ -1,22 +1,50 @@
 import {Component} from 'angular2/core';
 // import {Hero} from './hero'
 interface Hero {
-	id: number,
-	name: string
+    id: number,
+    name: string,
+    details: [{ address: string, port: number }]
 }
 
 @Component({
-	selector: 'my-app',
-	template: `
+    selector: 'my-app',
+    template: `
 		<h1>{{title}}</h1>
-		<h2>My favorite hero is {{hero.name}}</h2>
-	`
+		<h2>{{hero.name}} details!</h2>
+        <div>
+            <label>name: </label>
+            <div><input [(ngModel)]="hero.name" placeholder="name"></div>
+        </div>
+        <ul>
+            <li *ngFor="#detail of hero.details">
+                <span class="red padding">{{detail.port}}</span>{{detail.address}}
+            </li>
+        </ul>
+	`,
+    styles: [`
+        .red {
+            color: red;
+        }
+        .padding {
+            padding-right: 10px;
+        }
+    `]
 })
 
 export class AppComponent {
-	public title = 'Tour of Heroes';
-	public hero: Hero = {
-		id: 1,
-		name: 'Windstorm'
-	};
+    public title = 'Tour of Heroes';
+    public hero: Hero = {
+        id: 1,
+        name: 'Windstorm',
+        details: [
+            {
+                address: 'yangzhou',
+                port: 8000
+            },
+            {
+                address: 'nanjing',
+                port: 8810
+            }
+        ]
+    };
 }
