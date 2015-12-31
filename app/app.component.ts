@@ -1,5 +1,7 @@
+/// <reference path="../typings/angular2/angular2.d.ts" />
+
 import {Component} from 'angular2/core';
-// import {Hero} from './hero'
+
 interface Hero {
     id: number,
     name: string,
