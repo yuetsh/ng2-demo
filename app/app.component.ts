@@ -5,7 +5,7 @@ import {Component} from 'angular2/core';
 interface Hero {
     id: number,
     name: string,
-    details: [{ address: string, port: number }]
+    details: [{ address: string, number: number, name: string }]
 }
 
 @Component({
@@ -15,11 +15,13 @@ interface Hero {
 		<h2>{{hero.name}} details!</h2>
         <div>
             <label>name: </label>
-            <div><input [(ngModel)]="hero.name" placeholder="name"></div>
+            <div><input [(ngModel)]="hero2.name" placeholder="name"></div>
         </div>
         <ul>
-            <li *ngFor="#detail of hero.details">
-                <span class="red padding">{{detail.port}}</span>{{detail.address}}
+            <li *ngFor="#detail of hero2.details">
+                <span class="red padding">{{detail.number}}</span>
+                {{detail.address}}
+                <b>{{detail.name}}</b>
             </li>
         </ul>
 	`,
@@ -40,12 +42,14 @@ export class AppComponent {
         name: 'Windstorm',
         details: [
             {
-                address: 'yangzhou',
-                port: 8000
+                address: '黄浦区',
+                number: 8000,
+                name: '上海'
             },
             {
-                address: 'nanjing',
-                port: 8810
+                address: '东城区',
+                number: 8810,
+                name: '北京'
             }
         ]
     };
