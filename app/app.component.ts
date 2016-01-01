@@ -15,22 +15,19 @@ interface Hero {
 		<h2>{{hero.name}} details!</h2>
         <div>
             <label>name: </label>
-            <div><input [(ngModel)]="hero2.name" placeholder="name"></div>
+            <div><input [(ngModel)]="hero.name" placeholder="name"></div>
         </div>
-        <ul>
-            <li *ngFor="#detail of hero2.details">
-                <span class="red padding">{{detail.number}}</span>
-                {{detail.address}}
+        <ol>
+            <li *ngFor="#detail of hero.details">
+                <span class="red">{{detail.number}}</span>
                 <b>{{detail.name}}</b>
+                {{detail.address}}
             </li>
-        </ul>
+        </ol>
 	`,
     styles: [`
         .red {
             color: red;
-        }
-        .padding {
-            padding-right: 10px;
         }
     `]
 })
@@ -48,7 +45,7 @@ export class AppComponent {
             },
             {
                 address: '东城区',
-                number: 8810,
+                number: 8010,
                 name: '北京'
             }
         ]

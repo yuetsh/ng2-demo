@@ -31,24 +31,8 @@ System.register(['angular2/core'], function(exports_1) {
                             },
                             {
                                 address: '东城区',
-                                number: 8810,
+                                number: 8010,
                                 name: '北京'
-                            }
-                        ]
-                    };
-                    this.hero2 = {
-                        id: 1,
-                        name: 'Windstorm',
-                        details: [
-                            {
-                                address: '某某区',
-                                number: 8000,
-                                name: '西安市'
-                            },
-                            {
-                                address: '东城区',
-                                number: 8810,
-                                name: '北京市'
                             }
                         ]
                     };
@@ -56,8 +40,8 @@ System.register(['angular2/core'], function(exports_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n\t\t<h1>{{title}}</h1>\n\t\t<h2>{{hero.name}} details!</h2>\n        <div>\n            <label>name: </label>\n            <div><input [(ngModel)]=\"hero2.name\" placeholder=\"name\"></div>\n        </div>\n        <ul>\n            <li *ngFor=\"#detail of hero2.details\">\n                <span class=\"red padding\">{{detail.number}}</span>\n                {{detail.address}}\n                <b>{{detail.name}}</b>\n            </li>\n        </ul>\n\t",
-                        styles: ["\n        .red {\n            color: red;\n        }\n        .padding {\n            padding-right: 10px;\n        }\n    "]
+                        template: "\n\t\t<h1>{{title}}</h1>\n\t\t<h2>{{hero.name}} details!</h2>\n        <div>\n            <label>name: </label>\n            <div><input [(ngModel)]=\"hero.name\" placeholder=\"name\"></div>\n        </div>\n        <ol>\n            <li *ngFor=\"#detail of hero.details\">\n                <span class=\"red\">{{detail.number}}</span>\n                <b>{{detail.name}}</b>\n                {{detail.address}}\n            </li>\n        </ol>\n\t",
+                        styles: ["\n        .red {\n            color: red;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
