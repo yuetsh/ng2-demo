@@ -72,7 +72,11 @@ import {HeroService} from "./hero.service";
 export class AppComponent {
     public title = 'Tour of Heroes';
     public selectedHero: Hero;
-    public heroes: Hero;
+    public heroes: Hero[];
+
+    constructor( private _heroService: HeroService ) {
+        this.heroes = this._heroService.getHeroes();
+    }
 
     onSelect(hero: Hero) {
         this.selectedHero = hero;
