@@ -3,8 +3,11 @@ import {HEROES} from "./mock-heroes";
 
 @Injectable()
 
-export  class HeroService {
+export class HeroService {
     getHeroes() {
-        return HEROES;
+        return Promise.resolve(HEROES);
+        //return new Promise<Hero[]>(resolve =>
+        //    setTimeout(()=>resolve(HEROES), 1000) // 1 seconds
+        //);
     }
 }
