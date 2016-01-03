@@ -4,10 +4,12 @@ import {Component, OnInit} from 'angular2/core';
 import {Hero} from "./hero";
 import {HeroDetailComponent} from "./hero-details.component";
 import {HeroService} from "./hero.service";
+import {KeyUpComponent} from "./keyup.components";
 
 @Component({
     selector: 'my-app',
     template: `
+        <keyup></keyup>
         <ul class="heroes">
             <li *ngFor="#hero of heroes"
                 (click)="onSelect(hero)"
@@ -17,7 +19,7 @@ import {HeroService} from "./hero.service";
         </ul>
         <my-hero-detail [hero]="selectedHero"></my-hero-detail>
         `,
-    directives: [HeroDetailComponent],
+    directives: [HeroDetailComponent, KeyUpComponent],
     providers: [HeroService],
     styles: [`
       .selected {
