@@ -27,7 +27,7 @@ System.register(["angular2/core"], function(exports_1) {
                 ClickMeComponent = __decorate([
                     core_1.Component({
                         selector: 'click-me',
-                        template: "\n    <button (click)=\"onClickMe()\">Click Me!</button>\n    {{clickMessage}}\n    "
+                        template: "\n    <button (click)=\"onClickMe()\">Click Me!</button>\n    {{clickMessage}}<br>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ClickMeComponent);

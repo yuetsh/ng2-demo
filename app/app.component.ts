@@ -5,10 +5,12 @@ import {Hero} from "./hero";
 import {HeroDetailComponent} from "./hero-details.component";
 import {HeroService} from "./hero.service";
 import {KeyUpComponent} from "./keyup.components";
+import {ClickMeComponent} from "./click-me.component";
 
 @Component({
     selector: 'my-app',
     template: `
+        <click-me></click-me>
         <keyup></keyup>
         <ul class="heroes">
             <li *ngFor="#hero of heroes"
@@ -19,7 +21,7 @@ import {KeyUpComponent} from "./keyup.components";
         </ul>
         <my-hero-detail [hero]="selectedHero"></my-hero-detail>
         `,
-    directives: [HeroDetailComponent, KeyUpComponent],
+    directives: [HeroDetailComponent, KeyUpComponent, ClickMeComponent],
     providers: [HeroService],
     styles: [`
       .selected {

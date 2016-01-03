@@ -6,7 +6,7 @@ import {Component} from "angular2/core";
     selector: 'click-me',
     template: `
     <button (click)="onClickMe()">Click Me!</button>
-    {{clickMessage}}
+    {{clickMessage}}<br>
     `
 })
 
